@@ -1,5 +1,4 @@
 
-let intervalID;
 const typePara = document.createElement("p");
 
 function* typeMaker(string) {
