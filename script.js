@@ -1,5 +1,6 @@
 
 const typePara = document.createElement("p");
+const divFinder = document.getElementById("typewriter");
 
 function* typeMaker(string) {
     let index = 0;
@@ -25,6 +26,6 @@ const typeWrite = (string) => {
     }, 500);
 };
 
-document.body.appendChild(typePara);
+divFinder.appendChild(typePara);
 
 typeWrite("Prout");
