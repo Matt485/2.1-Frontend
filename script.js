@@ -1,14 +1,31 @@
 
+let intervalID;
 const typePara = document.createElement("p");
 
-const typeWrite = (string, element) => {
-    let intervalID;
-    for (let i = 0, len = string.length; i < len; i++) {
-        setInterval();
+function* typeMaker(string) {
+    let index = 0;
+    while (index < string.length) {
+        yield string[index];
+        index++;
     };
-    stopInterval();
+};
+
+const addText = (string) => {
+    typePara.innerText += string;
+};
+
+const typeWrite = (string) => {
+    const gen = typeMaker(string);
+    let myInterval = setInterval(function () {
+        let next = gen.next()
+        if (next.done){
+            clearInterval(myInterval);
+        } else {
+            addText(next.value)
+        };
+    }, 500);
 };
 
 document.body.appendChild(typePara);
 
-typeWrite("Prout", typePara);
+typeWrite("Prout");
