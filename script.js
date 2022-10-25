@@ -15,7 +15,7 @@ const addText = (string) => {
 };
 
 const typeWrite = (string) => {
-    const gen = typeMaker(string);
+    let gen = typeMaker(string);
     let myInterval = setInterval(function () {
         let next = gen.next()
         if (next.done){
