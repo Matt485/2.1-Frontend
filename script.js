@@ -1,6 +1,7 @@
 
 const typePara = document.createElement("p");
-const divFinder = document.getElementById("typewriter");
+const typeSelector = document.getElementById("typewriter");
+const whackSelector = document.getElementById("whack-container");
 
 function* typeMaker(string) {
     let index = 0;
@@ -12,6 +13,17 @@ function* typeMaker(string) {
 
 const addText = (string) => {
     typePara.innerText += string;
+};
+
+const randIntStr = () => {
+    return String(Math.ceil(Math.random()*5000));
+};
+
+const returnElement = () => {
+    let span = document.createElement("span");
+    span.id = "span" + randIntStr();
+    span.className = "circle";
+    return span;
 };
 
 const typeWrite = (string) => {
@@ -26,6 +38,10 @@ const typeWrite = (string) => {
     }, 500);
 };
 
-divFinder.appendChild(typePara);
+typeSelector.appendChild(typePara);
 
-typeWrite("Prout");
+typeWrite("TEST");
+
+for (let i = 0, len = 12; i < len; i++) {
+    whackSelector.appendChild(returnElement());
+};

@@ -5,8 +5,28 @@
         <meta name="viewport" content="width=device-width">
         <title>My Title</title>
         <script src="script.js" charset="utf-8" defer></script>
+        <style type="text/css" media="screen">
+            #whack-container {
+              width: 80%;
+              margin: auto;
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+            }
+
+            .circle {
+                height: 15vh;
+                width: 15vh;
+                background-color: #FF00FF;
+                border-radius: 50%;
+                bor
+                display: inline-block;
+            }
+        </style>
     </head>
     <body>
         <div id="typewriter"><p>This is my Typewriter:</p></div>
+        <div id="whack-container">
+            <!-- <span class="circle"></span> -->
+        </div>
     </body>
 </html>
